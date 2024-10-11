@@ -3,7 +3,7 @@ from pathlib import Path
 
 def describe_dataframe(df: pd.DataFrame):
     """
-    Prints information that describes the data in the DataFrame.
+    Prints detailed information that describes the data in the DataFrame.
     
     Parameters:
     df (pd.DataFrame): The pandas DataFrame containing data.
@@ -11,9 +11,31 @@ def describe_dataframe(df: pd.DataFrame):
     Returns:
     None
     """
-    print("Dataframe Information:")
-    print(df.info())
-    print("\nDataframe Description:")
+    # Print shape
+    print("Shape of the DataFrame (rows, columns):", df.shape)
+
+    # Print first 5 rows
+    print("\nFirst 5 rows of the DataFrame:")
+    print(df.head())
+
+    # Print last 5 rows
+    print("\nLast 5 rows of the DataFrame:")
+    print(df.tail())
+
+    # Print column labels
+    print("\nColumn labels of the DataFrame:")
+    print(df.columns)
+
+    # Print data types of each column
+    print("\nData types of each column:")
+    print(df.dtypes)
+
+    # Print DataFrame info
+    print("\nInformation about the DataFrame:")
+    df.info()
+
+    # Print descriptive statistics
+    print("\nDescriptive statistics of the DataFrame:")
     print(df.describe())
 
 if __name__ == '__main__':
